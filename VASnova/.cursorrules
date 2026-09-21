@@ -1,0 +1,14 @@
+# Project Overview: VASNova Android IoT App (ESP32)
+
+## Stack
+- Language: Kotlin
+- UI Framework: Jetpack Compose + Material 3
+- Architecture: MVVM + Clean Architecture + Hilt
+- Asynchrony: Kotlin Coroutines + StateFlow / SharedFlow
+- Protocols: BLE (BluetoothGatt) + MQTT (Wi-Fi)
+
+## Rules
+1. Hardware Isolation: All BLE/MQTT calls must be hidden behind `IoTRepository`. Never call hardware APIs directly in Composables or ViewModels.
+2. State Management: Use Unidirectional Data Flow (UDF). Expose state strictly via `StateFlow` using `asStateFlow()`.
+3. Hardware Emulation: Every real repository must have a corresponding `FakeIoTRepository` that emits mock telemetry for testing.
+4. Asynchrony: Execute hardware I/O on `Dispatchers.IO` and emit mapped events using `callbackFlow`.

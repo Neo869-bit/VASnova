@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cyber_emerald">#00FF87</color>
+    <color name="ic_launcher_background">#0B0F0E</color>
+    <color name="ic_launcher_foreground">#00FF87</color>
+    <color name="obsidian">#0B0F0E</color>
+    <string name="app_name">VASNova</string>
+    <style name="Theme.VASNova" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@color/obsidian</item>
+        <item name="android:navigationBarColor">@color/obsidian</item>
+        <item name="android:windowBackground">@color/obsidian</item>
+        <item name="android:colorPrimary">@color/cyber_emerald</item>
+    </style>
+</resources>
